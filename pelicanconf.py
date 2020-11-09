@@ -22,7 +22,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
          ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),)
+         ('ETHZ', 'https://ethz.ch/de.html'),)
             
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
