@@ -27,7 +27,7 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
         ('My Linkedin', 'https://www.linkedin.com/in/julius-gruber-4a1541157'),
-          ('Another social link', '#'),)
+          ,)
 
 DEFAULT_PAGINATION = 10
 
