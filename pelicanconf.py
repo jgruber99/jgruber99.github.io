@@ -1,7 +1,7 @@
-AUTHOR = 'Alexis Métaireau'
-SITENAME = "Alexis' log"
+AUTHOR = 'Julius Gruber'
+SITENAME = "Julius' Blog"
 SITESUBTITLE = 'A personal blog.'
-SITEURL = 'http://blog.notmyidea.org'
+SITEURL = ''
 TIMEZONE = "Europe/Paris"
 
 # can be useful in development, but set to False when you're ready to publish
@@ -55,7 +55,7 @@ PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 # have to be in caps
 foobar = "barbaz"
 
-THEME = 'themes/bootstrap2'
+THEME = 'themes/pelican_svbhack'
 OUTPUT_PATH = 'output'
 PATH = 'content'
 
