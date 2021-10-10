@@ -14,7 +14,7 @@ publishDir = "docs"
 
 # website title
 # 网站标题
-title = "Title of my website"
+title = "Julius Gruber Homepage"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -101,7 +101,7 @@ enableEmoji = true
       # 应用图标配置
       [languages.en.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-        title = "Name of my webpage"
+        title = "Julius Gruber webpage"
         # 是否隐藏网站图标资源链接
         noFavicon = false
         # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -146,9 +146,9 @@ enableEmoji = true
           avatarURL = "/images/avatar.jpg"           ######################      commented this out ############
           #avatarURL = <img src="/images/avatar.jpg" width="40" height="40">
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "Titel meiner website"
+          title = "Welcome to my website"
           # 主页显示的网站副标题
-          subtitle = "Super fancy einblendung"
+          subtitle = "You will learn nothing here today!"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
@@ -168,8 +168,6 @@ enableEmoji = true
         Telegram = "kwmrfkw"
 
         
-
-
 
 [params]
   # LoveIt theme version
@@ -208,7 +206,7 @@ enableEmoji = true
       logo = ""
       # title name
       # 标题名称
-      name = "Name of the website"
+      name = "Julius Gruber website"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       #pre = "<i class='fas fa-blog fa-fw'></i>"

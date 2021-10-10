@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Git - Tag - Title of my website</title>
+        <title>Git - Tag - Julius Gruber Homepage</title>
         <link>https://jgruber99.github.io/tags/git/</link>
-        <description>Git - Tag - Title of my website</description>
+        <description>Git - Tag - Julius Gruber Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>gruber.julius@gmx.at (Julius Gruber)</managingEditor>
             <webMaster>gruber.julius@gmx.at (Julius Gruber)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 16 Aug 2016 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jgruber99.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Git命令使用记录-基础篇</title>
