@@ -162,7 +162,7 @@ enableEmoji = true
           paginate = 6
       # 主页的社交信息设置
       [languages.en.params.social]
-        GitHub = "BruceMaa"
+        GitHub = "jgruber99"
         #RSS = true
         Linkedin = "xxxx"
         Telegram = "kwmrfkw"
@@ -404,9 +404,9 @@ enableEmoji = true
       [params.page.comment.utterances]
         enable = true
         # owner/repo
-        repo = "BruceMaa/blog"
+        repo = "jgruber99/blog"
         issueTerm = "pathname"
-        label = "brucemaa.cn"
+        label = "https://jgruber99.github.io"
         lightTheme = "github-light"
         darkTheme = "github-dark"
     # Third-party library config
@@ -431,7 +431,7 @@ enableEmoji = true
       # Publisher info
       # 出版者信息
       [params.page.seo.publisher]
-        name = "BruceMaa"
+        name = "Julius Gruber"
         logoUrl = "/images/avatar.png"
 
   # TypeIt config
