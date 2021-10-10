@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>DevOps - Tag - Julius Gruber Homepage</title>
+        <link>https://jgruber99.github.io/tags/devops/</link>
+        <description>DevOps - Tag - Julius Gruber Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>gruber.julius@gmx.at (Julius Gruber)</managingEditor>
+            <webMaster>gruber.julius@gmx.at (Julius Gruber)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 09 Oct 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jgruber99.github.io/tags/devops/" rel="self" type="application/rss+xml" /><item>
+    <title>Setup a static website with hugo &amp; github pages</title>
+    <link>https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/</link>
+    <pubDate>Sat, 09 Oct 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/</guid>
+    <description><![CDATA[Setup a static website with hugo &amp; github pages]]></description>
+</item></channel>
+</rss>

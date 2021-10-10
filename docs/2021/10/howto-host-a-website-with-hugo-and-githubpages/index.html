@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Setup a static website with hugo &amp; github pages - Julius Gruber Homepage</title><meta name="Description" content="Check this out"><meta property="og:title" content="Setup a static website with hugo &amp; github pages" />
+<meta property="og:description" content="Check this out" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/" /><meta property="og:image" content="https://jgruber99.github.io/images/avatar.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-10T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jgruber99.github.io/images/avatar.jpg"/>
+
+<meta name="twitter:title" content="Setup a static website with hugo &amp; github pages"/>
+<meta name="twitter:description" content="Check this out"/>
+<meta name="application-name" content="Julius Gruber webpage">
+<meta name="apple-mobile-web-app-title" content="Julius Gruber webpage"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/" /><link rel="prev" href="https://jgruber99.github.io/2021/10/computer-setup/" /><link rel="next" href="https://jgruber99.github.io/2021/10/karteikarten/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="i1YHXYoSTAxctMaBwNPg6eXPzIy64NzevB4PKQyqJQI" /><meta name="baidu-site-verification" content="ed487e2486b1b01b450e21334653d1c2" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Setup a static website with hugo \u0026 github pages",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jgruber99.github.io\/2021\/10\/howto-host-a-website-with-hugo-and-githubpages\/"
+        },"image": ["https:\/\/jgruber99.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linux, MacOS, Git, DevOps","wordcount":  61 ,
+        "url": "https:\/\/jgruber99.github.io\/2021\/10\/howto-host-a-website-with-hugo-and-githubpages\/","datePublished": "2021-10-09T00:00:00+00:00","dateModified": "2021-10-10T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Julius Gruber","logo": "https:\/\/jgruber99.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Julius Gruber"
+            },"description": "Check this out"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Julius Gruber Homepage">Julius Gruber website</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/documentation/"> Documentation </a><a class="menu-item" href="/about/"> About me </a><a class="menu-item" href="https://github.com/jgruber99" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Julius Gruber Homepage">Julius Gruber website</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/documentation/" title="">Documentation</a><a class="menu-item" href="/about/" title="">About me</a><a class="menu-item" href="https://github.com/jgruber99" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Setup a static website with hugo &amp; github pages</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jgruber99.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Julius Gruber</a></span>&nbsp;<span class="post-category">included in <a href="/categories/website/"><i class="far fa-folder fa-fw"></i>Website</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-09">2021-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;61 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#i-will-finish-this-when-i-have-more-time-so-far-i-will-include-some-links-i-used-myself">I will finish this when I have more time. So far I will include some links I used myself:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="i-will-finish-this-when-i-have-more-time-so-far-i-will-include-some-links-i-used-myself">I will finish this when I have more time. So far I will include some links I used myself:</h3>
+<ul>
+<li><a href="https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html" target="_blank" rel="noopener noreffer">https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html</a></li>
+<li><a href="https://themes.gohugo.io/themes/hermit/" target="_blank" rel="noopener noreffer">https://themes.gohugo.io/themes/hermit/</a></li>
+<li><a href="https://riptutorial.com/markdown/example/2215/reference-link" target="_blank" rel="noopener noreffer">https://riptutorial.com/markdown/example/2215/reference-link</a></li>
+<li><a href="https://www.markdownguide.org/basic-syntax" target="_blank" rel="noopener noreffer">https://www.markdownguide.org/basic-syntax</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-13.html" target="_blank" rel="noopener noreffer">https://rmarkdown.rstudio.com/lesson-13.html</a></li>
+<li><a href="https://rmarkdown.rstudio.com/authoring_basics.html" target="_blank" rel="noopener noreffer">https://rmarkdown.rstudio.com/authoring_basics.html</a></li>
+<li><a href="https://fontawesome.com/v4.7/icons/" target="_blank" rel="noopener noreffer">https://fontawesome.com/v4.7/icons/</a></li>
+<li><a href="https://rstudio.github.io/distill/website.html" target="_blank" rel="noopener noreffer">https://rstudio.github.io/distill/website.html</a> Interesting for the Google Analytics</li>
+<li><a href="https://bookdown.org/yihui/blogdown/a-quick-example.html" target="_blank" rel="noopener noreffer">https://bookdown.org/yihui/blogdown/a-quick-example.html</a> Bookdown, Good when transferring to Hugo</li>
+<li><a href="https://themes.gohugo.io/themes/loveit/" target="_blank" rel="noopener noreffer">https://themes.gohugo.io/themes/loveit/</a> nice Hugo theme I want to use</li>
+<li><a href="https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html#Demo" target="_blank" rel="noopener noreffer">https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html#Demo</a> Website with good explanations for Hosting</li>
+<li><a href="https://superdevresources.com/host-static-website-free/" target="_blank" rel="noopener noreffer">https://superdevresources.com/host-static-website-free/</a> several opportunities for hosting static websites</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-10-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/macos/">MacOS</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/devops/">DevOps</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021/10/computer-setup/" class="prev" rel="prev" title="Setup &amp; tools for different operating systems"><i class="fas fa-angle-left fa-fw"></i>Setup &amp; tools for different operating systems</a>
+            <a href="/2021/10/karteikarten/" class="next" rel="next" title="Flashcards for &#34;Medias in Red&#34;">Flashcards for &#34;Medias in Red&#34;<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jgruber99.github.io" target="_blank">Julius Gruber</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"https://jgruber99.github.io","lightTheme":"github-light","repo":"jgruber99/blog"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-82993633-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-82993633-1" async></script></body>
+</html>

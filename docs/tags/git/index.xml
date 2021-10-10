@@ -4,12 +4,12 @@
         <link>https://jgruber99.github.io/tags/git/</link>
         <description>Git - Tag - Julius Gruber Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>gruber.julius@gmx.at (Julius Gruber)</managingEditor>
-            <webMaster>gruber.julius@gmx.at (Julius Gruber)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 16 Aug 2016 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jgruber99.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
-    <title>Git命令使用记录-基础篇</title>
-    <link>https://jgruber99.github.io/2016/08/git-basics/</link>
-    <pubDate>Tue, 16 Aug 2016 00:00:00 &#43;0000</pubDate>
+            <webMaster>gruber.julius@gmx.at (Julius Gruber)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 09 Oct 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jgruber99.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Setup a static website with hugo &amp; github pages</title>
+    <link>https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/</link>
+    <pubDate>Sat, 09 Oct 2021 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://jgruber99.github.io/2016/08/git-basics/</guid>
-    <description><![CDATA[Git基础命令的使用记录]]></description>
+    <guid>https://jgruber99.github.io/2021/10/howto-host-a-website-with-hugo-and-githubpages/</guid>
+    <description><![CDATA[Setup a static website with hugo &amp; github pages]]></description>
 </item></channel>
 </rss>
