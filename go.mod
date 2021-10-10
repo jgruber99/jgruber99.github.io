@@ -1,4 +1,4 @@
-module github.com/BruceMaa/brucemaa.github.io
+module github.com/jgruber99/jgruber99.github.io
 
 go 1.15
 
