@@ -1,0 +1,95 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Hive环境部署 - 司马琦昂的博客</title><meta name=Description content="文章描述"><meta property="og:title" content="Hive环境部署"><meta property="og:description" content="文章描述"><meta property="og:type" content="article"><meta property="og:url" content="https://brucemaa.cn/2021/03/hive2-standalone-modde-setup/"><meta property="og:image" content="https://brucemaa.cn/images/avatar.jpg"><meta property="article:published_time" content="2021-03-29T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-29T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://brucemaa.cn/images/avatar.jpg"><meta name=twitter:title content="Hive环境部署"><meta name=twitter:description content="文章描述"><meta name=application-name content="司马琦昂的博客"><meta name=apple-mobile-web-app-title content="司马琦昂的博客"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://brucemaa.cn/2021/03/hive2-standalone-modde-setup/><link rel=prev href=https://brucemaa.cn/2021/03/hadoop3-cluster-distributed-ha-mode-setup/><link rel=next href=https://brucemaa.cn/2021/04/gushici-rongkujian-1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><meta name=google-site-verification content="i1YHXYoSTAxctMaBwNPg6eXPzIy64NzevB4PKQyqJQI"><meta name=baidu-site-verification content="ed487e2486b1b01b450e21334653d1c2"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hive环境部署","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/brucemaa.cn\/2021\/03\/hive2-standalone-modde-setup\/"},"image":["https:\/\/brucemaa.cn\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Hive","wordcount":750,"url":"https:\/\/brucemaa.cn\/2021\/03\/hive2-standalone-modde-setup\/","datePublished":"2021-03-29T00:00:00+00:00","dateModified":"2021-03-29T00:00:00+00:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"BruceMaa","logo":"https:\/\/brucemaa.cn\/images\/avatar.png"},"author":{"@type":"Person","name":"BruceMaa"},"description":"文章描述"}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=司马琦昂的博客><span class=header-title-pre><i class="fas fa-blog fa-fw"></i></span>司马琦昂的博客<span class=header-title-post><i class="fas fa-smoking-ban fa-fw"></i></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>所有文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/BruceMaa title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=司马琦昂的博客><span class=header-title-pre><i class="fas fa-blog fa-fw"></i></span>司马琦昂的博客<span class=header-title-post><i class="fas fa-smoking-ban fa-fw"></i></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/>所有文章</a><a class=menu-item href=/tags/>标签</a><a class=menu-item href=/categories/>分类</a><a class=menu-item href=/documentation/>文档</a><a class=menu-item href=/about/>关于</a><a class=menu-item href=https://github.com/BruceMaa title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Hive环境部署</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://brucemaa.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>BruceMaa</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/bigdata/><i class="far fa-folder fa-fw"></i>BigData</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-29>2021-03-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 750 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#目的>目的</a></li><li><a href=#准备环境>准备环境</a></li><li><a href=#开始配置服务端>开始配置服务端</a></li><li><a href=#运行服务端>运行服务端</a></li><li><a href=#配置客户端>配置客户端</a></li><li><a href=#使用beeline连接hiveserver2>使用beeline连接hiveserver2</a></li></ul></nav></div></div><div class=content id=content><h2 id=目的>目的</h2><p>本篇文章是记录在Hadoop部署完成后，如何部署配置Hive。</p><h2 id=准备环境>准备环境</h2><ol><li>Hadoop运行环境，可以是<a href=https://brucemaa.cn/2021/03/hadoop3-standalone-pseudo-distributed-mode-setup/ target=_blank rel="noopener noreffer">单机伪分布式部署</a>，可以是<a href=https://brucemaa.cn/2021/03/hadoop3-cluster-distributed-mode-setup/ target=_blank rel="noopener noreffer">分布式集群部署</a>，或者<a href=https://brucemaa.cn/2021/03/hadoop3-cluster-distributed-ha-mode-setup/ target=_blank rel="noopener noreffer">高可用部署</a>。</li><li>选择两个服务器部署Hive，一个用于部署服务端，一个用于部署客户端，服务端是至少运行一个Hadoop节点。</li><li>下载hive</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# wget https://mirrors.tuna.tsinghua.edu.cn/apache/hive/stable-2/apache-hive-2.3.8-bin.tar.gz
+</code></pre></td></tr></table></div></div><ol start=3><li>解压Hive</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# mkdir -vp /usr/local/hive
+root@bigdata-3:# tar -xzvf apache-hive-2.3.8-bin.tar.gz -C /usr/local/hive
+root@bigdata-3:# ln -sf /usr/local/hive/apache-hive-2.3.8-bin /usr/local/hive/default
+</code></pre></td></tr></table></div></div><ol start=4><li>MySQL存储元数据
+运行一个关系型数据库实例，用于存储Hive的元数据。每种关系型数据库都有版本要求：
+<code>MySQL</code>版本必须最小<code>5.6.17</code>，
+<code>PostgreSQL</code>版本最小<code>9.1.13</code>，
+<code>Oracle</code>版本最小<code>11g</code>，
+<code>MS_SQL_SERVER</code>版本最小<code>2008.R2</code>。
+确定好后，将数据库驱动复制到hive的lib目录下<code>/usr/local/hive/default/lib</code>。
+本篇文章选择MySQL数据库，并部署在了<code>bigdata-4</code>服务器。</li></ol><h2 id=开始配置服务端>开始配置服务端</h2><ol><li>环境变量<code>/etc/profile</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>export</span> <span class=nv>HIVE_HOME</span><span class=o>=</span>/usr/local/hive/default
+</code></pre></td></tr></table></div></div><ol start=2><li>进入到目录<code>$HIVE_HOME/conf</code>，选择配置文件</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# cp hive-env.sh.template hive-env.sh
+root@bigdata-3:# cp hive-default.xml.template hive-site.xml
+</code></pre></td></tr></table></div></div><ol start=3><li><code>$HIVE_HOME/conf/hive-env.sh</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>HADOOP_HOME</span><span class=o>=</span>/usr/local/hadoop/default
+<span class=nb>export</span> <span class=nv>HIVE_AUX_JARS_PATH</span><span class=o>=</span>/usr/local/hive/default/lib
+</code></pre></td></tr></table></div></div><ol start=4><li><code>$HIVE_HOME/conf/hive-site.xml</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;configuration&gt;</span>
+  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>hive.metastore.warehouse.dir<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>/user/hive/warehouse<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>jdbc:mysql://bigdata-4:3306/hadoop_hive?createDatabaseIfNotExist=true<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>javax.jdo.option.ConnectionDriverName<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>com.mysql.cj.jdbc.Driver<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>javax.jdo.option.ConnectionUserName<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>root<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>javax.jdo.option.ConnectionPassword<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>example<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+<span class=nt>&lt;/configuration&gt;</span>
+</code></pre></td></tr></table></div></div><ol start=5><li>初始化元数据，Hive旧版本会运行时自动初始化</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# <span class=nv>$HIVE_HOME</span>/bin/schematool -dbType mysql -initSchema
+</code></pre></td></tr></table></div></div><ol start=6><li>HDFS上创建存储路径
+这个在进行hive操作时，也会自动创建。</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# <span class=nv>$HADOOP_HOME</span>/bin/hdfs dfs -mkdir -p /user/hive/warehouse
+</code></pre></td></tr></table></div></div><h2 id=运行服务端>运行服务端</h2><ol><li>启动hive</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-3:# <span class=nv>$HIVE_HOME</span>/bin/hive --service metastore
+</code></pre></td></tr></table></div></div><p>hive是前台启动，后台启动需要<code>nohup ... &</code>。</p><h2 id=配置客户端>配置客户端</h2><p>客户端选择<code>bigdata-4</code>服务器，并且使用<code>hiveserver2</code>启动。</p><ol><li>客户端配置<code>$HIVE_HOME/conf/hive-site.xml</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-xml data-lang=xml>  <span class=nt>&lt;property&gt;</span>
+    <span class=nt>&lt;name&gt;</span>hive.metastore.uris<span class=nt>&lt;/name&gt;</span>
+    <span class=nt>&lt;value&gt;</span>thrift://bigdata-3:9083<span class=nt>&lt;/value&gt;</span>
+  <span class=nt>&lt;/property&gt;</span>
+</code></pre></td></tr></table></div></div><ol start=2><li>启动hiveservier2替换hive</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-4:# nohup <span class=nv>$HIVE_HOME</span>/bin/hiveserver2 <span class=p>&amp;</span>
+</code></pre></td></tr></table></div></div><p>或者</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-4:# nohup <span class=nv>$HIVE_HOME</span>/bin/hive --service hiveserver2 <span class=p>&amp;</span>
+</code></pre></td></tr></table></div></div><h2 id=使用beeline连接hiveserver2>使用beeline连接hiveserver2</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@bigdata-4:# bin/beeline -u jdbc:hive2://bigdata-4:10000
+</code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-03-29</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/hive/>Hive</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/2021/03/hadoop3-cluster-distributed-ha-mode-setup/ class=prev rel=prev title=Hadoop3分布式高可用部署><i class="fas fa-angle-left fa-fw"></i>Hadoop3分布式高可用部署</a>
+<a href=/2021/04/gushici-rongkujian-1/ class=next rel=next title=荣枯鉴>荣枯鉴<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2016 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://brucemaa.cn target=_blank>BruceMaa</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"brucemaa.cn","lightTheme":"github-light","repo":"BruceMaa/blog"}}};</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-82993633-1',{'anonymize_ip':true});</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-82993633-1" async></script></body></html>

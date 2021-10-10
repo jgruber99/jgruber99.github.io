@@ -1,0 +1,25 @@
+name: "Julius Homepage"
+# google_analytics: "UA-77306155-2" You need this and customize the token
+navbar:
+  title: "Julius Gruber"
+  left:
+    - text: "About me"
+      href: index.html
+    - text: "Flashcard Project"
+      href: Flashcard.html
+    - text: "Technical Setup"
+      href: Setup.html
+    - text: "Setup Website"
+      href: HostW.html
+  right:
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/julius-gruber-4a1541157/
+    - icon: fa-github fa-lg
+      href: https://github.com/JuliusGruber99
+    - icon: fa-telegram fa-lg
+      href: https://t.me/jgruber
+      
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate

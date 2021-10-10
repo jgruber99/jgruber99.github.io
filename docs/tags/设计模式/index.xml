@@ -1,0 +1,9 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>设计模式 - 标签 - 司马琦昂的博客</title><link>https://brucemaa.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><description>设计模式 - 标签 - 司马琦昂的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bruce.maqiang@gmail.com (BruceMaa)</managingEditor><webMaster>bruce.maqiang@gmail.com (BruceMaa)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Sep 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://brucemaa.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml"/><item><title>JAVA与模式－－设计模式</title><link>https://brucemaa.cn/2016/09/java-design-patterns/</link><pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate><author>作者</author><guid>https://brucemaa.cn/2016/09/java-design-patterns/</guid><description><![CDATA[<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>背景<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">此篇只为导航，感谢博客园中的<a href="http://www.cnblogs.com/java-my-life/" target="_blank" rel="noopener noreffer"><strong>java-my-lift</strong></a>的详细讲解。
+每天学一篇设计模式，记录到导航页中，不做转载。</div>
+        </div>
+    </div>]]></description></item></channel></rss>

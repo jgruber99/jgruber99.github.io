@@ -1,0 +1,170 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>JAVA与模式－－设计模式 - 司马琦昂的博客</title><meta name=Description content="君子敬其在己者，而不慕其在天者，是以日进也"><meta property="og:title" content="JAVA与模式－－设计模式"><meta property="og:description" content="背景
+        
+        
+            此篇只为导航，感谢博客园中的java-my-lift的详细讲解。
+每天学一篇设计模式，记录到导航页中，不做转载。"><meta property="og:type" content="article"><meta property="og:url" content="https://brucemaa.cn/2016/09/java-design-patterns/"><meta property="og:image" content="https://brucemaa.cn/images/avatar.jpg"><meta property="article:published_time" content="2016-09-02T00:00:00+00:00"><meta property="article:modified_time" content="2016-09-02T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://brucemaa.cn/images/avatar.jpg"><meta name=twitter:title content="JAVA与模式－－设计模式"><meta name=twitter:description content="背景
+        
+        
+            此篇只为导航，感谢博客园中的java-my-lift的详细讲解。
+每天学一篇设计模式，记录到导航页中，不做转载。"><meta name=application-name content="司马琦昂的博客"><meta name=apple-mobile-web-app-title content="司马琦昂的博客"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://brucemaa.cn/2016/09/java-design-patterns/><link rel=prev href=https://brucemaa.cn/2016/09/python-commands-records-01/><link rel=next href=https://brucemaa.cn/2016/09/sql-categories/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><meta name=google-site-verification content="i1YHXYoSTAxctMaBwNPg6eXPzIy64NzevB4PKQyqJQI"><meta name=baidu-site-verification content="ed487e2486b1b01b450e21334653d1c2"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"JAVA与模式－－设计模式","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/brucemaa.cn\/2016\/09\/java-design-patterns\/"},"image":["https:\/\/brucemaa.cn\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"设计模式","wordcount":3362,"url":"https:\/\/brucemaa.cn\/2016\/09\/java-design-patterns\/","datePublished":"2016-09-02T00:00:00+00:00","dateModified":"2016-09-02T00:00:00+00:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"BruceMaa","logo":"https:\/\/brucemaa.cn\/images\/avatar.png"},"author":{"@type":"Person","name":"BruceMaa"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=司马琦昂的博客><span class=header-title-pre><i class="fas fa-blog fa-fw"></i></span>司马琦昂的博客<span class=header-title-post><i class="fas fa-smoking-ban fa-fw"></i></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>所有文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/BruceMaa title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=司马琦昂的博客><span class=header-title-pre><i class="fas fa-blog fa-fw"></i></span>司马琦昂的博客<span class=header-title-post><i class="fas fa-smoking-ban fa-fw"></i></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/>所有文章</a><a class=menu-item href=/tags/>标签</a><a class=menu-item href=/categories/>分类</a><a class=menu-item href=/documentation/>文档</a><a class=menu-item href=/about/>关于</a><a class=menu-item href=https://github.com/BruceMaa title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">JAVA与模式－－设计模式</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://brucemaa.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>BruceMaa</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/java/><i class="far fa-folder fa-fw"></i>Java</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2016-09-02>2016-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3362 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#1-简单工厂模式static-factory-method>1. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/22/2412308.html>简单工厂模式</a></a></li><li><a href=#2-工厂方法模式factory-method>2. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/25/2416227.html>工厂方法模式</a></a></li><li><a href=#3-抽象工厂模式abstract-factory>3. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/28/2418836.html>抽象工厂模式</a></a></li><li><a href=#4-单例模式singleton>4. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/31/2425631.html>单例模式</a></a><ul><li><a href=#4-1-饿汉式单例模式>4-1. 饿汉式单例模式</a></li><li><a href=#4-2-懒汉式单例模式>4-2. 懒汉式单例模式</a></li><li><a href=#4-3-双重检查加锁>4-3. 双重检查加锁</a></li><li><a href=#4-4-类级内部类>4-4. 类级内部类</a></li><li><a href=#4-5-枚举单例>4-5. 枚举单例</a></li></ul></li><li><a href=#5-建造模式builder>5. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/07/2433939.html>建造模式</a></a></li><li><a href=#6-原型模式prototype>6. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/11/2439387.html>原型模式</a></a></li><li><a href=#7-适配器模式adapter>7. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/13/2442795.html>适配器模式</a></a></li><li><a href=#8-合成模式composite>8. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/17/2453861.html>合成模式</a></a></li><li><a href=#9-装饰模式decorator>9. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/20/2455726.html>装饰模式</a></a></li><li><a href=#10-代理模式proxy>10. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/23/2466712.html>代理模式</a></a></li><li><a href=#11-享元模式flyweight>11. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/26/2468499.html>享元模式</a></a></li><li><a href=#12-门面模式facade>12. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/02/2478101.html>门面模式</a></a></li><li><a href=#13-桥梁模式bridge>13. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/07/2480938.html>桥梁模式</a></a></li><li><a href=#14-不变模式immutable>14. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/08/2487757.html>不变模式</a></a></li><li><a href=#15-策略模式strategy>15. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html>策略模式</a></a></li><li><a href=#16-模板方法模式template-method>16. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/14/2495235.html>模板方法模式</a></a></li><li><a href=#17-观察者模式observer>17. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/16/2502279.html>观察者模式</a></a></li><li><a href=#18-迭代子模式iterator>18. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/22/2511506.html>迭代子模式</a></a></li><li><a href=#19-责任链模式chain-of-responsibility>19. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/28/2516865.html>责任链模式</a></a></li><li><a href=#20-命令模式command>20. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/01/2526972.html>命令模式</a></a></li><li><a href=#21-备忘录模式memento>21. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/06/2534942.html>备忘录模式</a></a></li><li><a href=#22-状态模式state>22. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/08/2538146.html>状态模式</a></a></li><li><a href=#23-访问者模式visitor>23. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html>访问者模式</a></a></li><li><a href=#24-解释器模式interpreter>24. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/19/2552617.html>解释器模式</a></a></li><li><a href=#25-调停者模式mediator>25. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/20/2554024.html>调停者模式</a></a></li></ul></li></ul></nav></div></div><div class=content id=content><div class="details admonition note open"><div class="details-summary admonition-title"><i class="icon fas fa-pencil-alt fa-fw"></i>背景<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>此篇只为导航，感谢博客园中的<a href=http://www.cnblogs.com/java-my-life/ target=_blank rel="noopener noreffer"><strong>java-my-lift</strong></a>的详细讲解。
+每天学一篇设计模式，记录到导航页中，不做转载。</div></div></div><h3 id=1-简单工厂模式static-factory-method>1. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/22/2412308.html target=_blank rel="noopener noreffer">简单工厂模式</a></h3><blockquote><p>简单工厂模式是类的创建模式，又叫做静态工厂方法（Static Factory Method）模式。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。</p><p>例子：登陆－－域名登陆，口令登陆</p></blockquote><h3 id=2-工厂方法模式factory-method>2. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/25/2416227.html target=_blank rel="noopener noreffer">工厂方法模式</a></h3><blockquote><p>工厂方法模式是类的创建模式，又叫做虚拟构造子(Virtual Constructor)模式或者多态性工厂（Polymorphic Factory）模式。</p><p>工厂方法模式的用意是定义一个创建产品对象的工厂接口，将实际创建工作推迟到子类中。</p><p>例子：导出文件－－导出Excel，导出HTML，导出PDF</p></blockquote><h3 id=3-抽象工厂模式abstract-factory>3. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/28/2418836.html target=_blank rel="noopener noreffer">抽象工厂模式</a></h3><blockquote><p>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p><p>例子：装机工程师组装电脑</p></blockquote><h3 id=4-单例模式singleton>4. <a href=http://www.cnblogs.com/java-my-life/archive/2012/03/31/2425631.html target=_blank rel="noopener noreffer">单例模式</a></h3><blockquote><p>作为对象的创建模式，单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。这个类称为单例类。</p></blockquote><h4 id=4-1-饿汉式单例模式>4-1. 饿汉式单例模式</h4><ul><li>空间换时间</li><li>类装载的时候就创建实例</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>EagerSingleton</span> <span class=o>{</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=n>EagerSingleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>EagerSingleton</span><span class=o>();</span>
+    <span class=cm>/**
+</span><span class=cm>     * 私有默认构造子
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=nf>EagerSingleton</span><span class=o>(){}</span>
+    <span class=cm>/**
+</span><span class=cm>     * 静态工厂方法
+</span><span class=cm>     */</span>
+    <span class=kd>public</span> <span class=kd>static</span> <span class=n>EagerSingleton</span> <span class=nf>getInstance</span><span class=o>(){</span>
+        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></td></tr></table></div></div><h4 id=4-2-懒汉式单例模式>4-2. 懒汉式单例模式</h4><ul><li>时间换空间</li><li>调用时再创建实例</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>LazySingleton</span> <span class=o>{</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=n>LazySingleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+    <span class=cm>/**
+</span><span class=cm>     * 私有默认构造子
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=nf>LazySingleton</span><span class=o>(){}</span>
+    <span class=cm>/**
+</span><span class=cm>     * 静态工厂方法
+</span><span class=cm>     */</span>
+    <span class=kd>public</span> <span class=kd>static</span> <span class=kd>synchronized</span> <span class=n>LazySingleton</span> <span class=nf>getInstance</span><span class=o>(){</span>
+        <span class=k>if</span><span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>){</span>
+            <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>LazySingleton</span><span class=o>();</span>
+        <span class=o>}</span>
+        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></td></tr></table></div></div><h4 id=4-3-双重检查加锁>4-3. 双重检查加锁</h4><ul><li><code>volatile</code>关键字</li><li>线程安全</li><li>运行效率不高，不建议采用</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Singleton</span> <span class=o>{</span>
+    <span class=kd>private</span> <span class=kd>volatile</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+    <span class=kd>private</span> <span class=nf>Singleton</span><span class=o>(){}</span>
+    <span class=kd>public</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=nf>getInstance</span><span class=o>(){</span>
+        <span class=c1>//先检查实例是否存在，如果不存在才进入下面的同步块
+</span><span class=c1></span>        <span class=k>if</span><span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>){</span>
+            <span class=c1>//同步块，线程安全的创建实例
+</span><span class=c1></span>            <span class=kd>synchronized</span> <span class=o>(</span><span class=n>Singleton</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
+                <span class=c1>//再次检查实例是否存在，如果不存在才真正的创建实例
+</span><span class=c1></span>                <span class=k>if</span><span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>){</span>
+                    <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Singleton</span><span class=o>();</span>
+                <span class=o>}</span>
+            <span class=o>}</span>
+        <span class=o>}</span>
+        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></td></tr></table></div></div><h4 id=4-4-类级内部类>4-4. 类级内部类</h4><ul><li>延迟加载</li><li>线程安全</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Singleton</span> <span class=o>{</span>
+    
+    <span class=kd>private</span> <span class=nf>Singleton</span><span class=o>(){}</span>
+    <span class=cm>/**
+</span><span class=cm>     *    类级的内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例
+</span><span class=cm>     *    没有绑定关系，而且只有被调用到时才会装载，从而实现了延迟加载。
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>SingletonHolder</span><span class=o>{</span>
+        <span class=cm>/**
+</span><span class=cm>         * 静态初始化器，由JVM来保证线程安全
+</span><span class=cm>         */</span>
+        <span class=kd>private</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Singleton</span><span class=o>();</span>
+    <span class=o>}</span>
+    
+    <span class=kd>public</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=nf>getInstance</span><span class=o>(){</span>
+        <span class=k>return</span> <span class=n>SingletonHolder</span><span class=o>.</span><span class=na>instance</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></td></tr></table></div></div><h4 id=4-5-枚举单例>4-5. 枚举单例</h4><ul><li>简洁、高效、安全</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>enum</span> <span class=n>Singleton</span> <span class=o>{</span>
+    <span class=cm>/**
+</span><span class=cm>     * 定义一个枚举的元素，它就代表了Singleton的一个实例。
+</span><span class=cm>     */</span>
+    
+    <span class=n>uniqueInstance</span><span class=o>;</span>
+    
+    <span class=cm>/**
+</span><span class=cm>     * 单例可以有自己的操作
+</span><span class=cm>     */</span>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>singletonOperation</span><span class=o>(){</span>
+        <span class=c1>//功能处理
+</span><span class=c1></span>    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></td></tr></table></div></div><h3 id=5-建造模式builder>5. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/07/2433939.html target=_blank rel="noopener noreffer">建造模式</a></h3><blockquote><p>建造模式是对象的创建模式。建造模式可以将一个产品的内部表象（internal representation）与产品的生产过程分割开来，从而可以使一个建造过程生成具有不同的内部表象的产品对象。</p><p>例子：订阅杂志，发送欢迎邮件，取消订阅，发送欢送邮件</p></blockquote><h3 id=6-原型模式prototype>6. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/11/2439387.html target=_blank rel="noopener noreffer">原型模式</a></h3><blockquote><p>原型模式术语对象的创建模式。通过给出一个原型对象来指明所有创建的对象的类型，然后用复制这个原型对象的办法创建出更多同类型的对象。这就是选型模式的用意。</p><p>例子：美猴王分身</p></blockquote><h3 id=7-适配器模式adapter>7. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/13/2442795.html target=_blank rel="noopener noreffer">适配器模式</a></h3><blockquote><p>适配器模式把一个类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法在一起工作的两个类能够一起工作。</p><p>例子：三相插头转到两相插头的转换器</p></blockquote><h3 id=8-合成模式composite>8. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/17/2453861.html target=_blank rel="noopener noreffer">合成模式</a></h3><blockquote><p>合成模式属于对象的机构模式，有时又叫做“部分－－－－整体”模式。合成模式将对象组装到树结构中，可以用来描述整体与部分的关系。合成模式可以使客户端将单纯元素与复合元素同等看待。</p></blockquote><h3 id=9-装饰模式decorator>9. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/20/2455726.html target=_blank rel="noopener noreffer">装饰模式</a></h3><blockquote><p>装饰模式又名包装（Wrapper）模式。装饰模式以对客户端透明的方式扩展对象的功能，是继承关系的一个替代方案。</p><p>例子：齐天大圣七十二变，JAVA I/O库的基本模式</p></blockquote><h3 id=10-代理模式proxy>10. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/23/2466712.html target=_blank rel="noopener noreffer">代理模式</a></h3><blockquote><p>代理模式是对象的结构模式。代理模式给某一个对象提供一个代理对象，并由代理对象控制对原对象的引用。</p></blockquote><h3 id=11-享元模式flyweight>11. <a href=http://www.cnblogs.com/java-my-life/archive/2012/04/26/2468499.html target=_blank rel="noopener noreffer">享元模式</a></h3><blockquote><p>享元模式是对象的结构模式。享元模式以共享的方式高效地支持大量的细粒度对象。</p></blockquote><h3 id=12-门面模式facade>12. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/02/2478101.html target=_blank rel="noopener noreffer">门面模式</a></h3><blockquote><p>门面模式是对象的结构模式，外部与一个子系统的通信必须通过一个统一的门面对象进行。门面模式提供一个高层次的接口，使得子系统更易于使用。</p><p>例子：医院的各个部门由接待员负责。</p></blockquote><h3 id=13-桥梁模式bridge>13. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/07/2480938.html target=_blank rel="noopener noreffer">桥梁模式</a></h3><blockquote><p>桥梁模式是对象的结构模式。又称为柄体(Handle and Body)模式或接口(interface)模式。桥梁模式的用意是“将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立地变化”。</p><p>例子：发送消息－－普通消息，加急消息，特急消息</p><p>JDBC驱动器就是一个典型的桥梁模式。</p></blockquote><h3 id=14-不变模式immutable>14. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/08/2487757.html target=_blank rel="noopener noreffer">不变模式</a></h3><blockquote><p>一个对象的状态在对象被创建之后就不再变化，这就是所谓的不变模式。</p><p>不变模式只涉及到一个类。一个类的内部状态创建后，在整个生命周期都不会发生变化时，这样的类称作不变类。这种使用不变类的做法叫做不变模式。不变模式有两种形式：一种是弱不变模式，另一种是强不变模式。</p></blockquote><h3 id=15-策略模式strategy>15. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html target=_blank rel="noopener noreffer">策略模式</a></h3><blockquote><p>策略模式属于对象的行为模式。其用意是针对一组算法，将每一个算法封装到具有共同接口的独立类中，从而使得它们可以相互替换。策略模式使得算法可以在不影响到客户端的情况下发生改变。</p><p>例子：购物网站，针对不同级别会员打折。</p></blockquote><h3 id=16-模板方法模式template-method>16. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/14/2495235.html target=_blank rel="noopener noreffer">模板方法模式</a></h3><blockquote><p>模板方法模式是类的行为模式。准备一个抽象类，将部分逻辑以具体方法以及具体构造函数的形式实现，然后声明一些抽象方法来迫使子类实现剩余的逻辑。不同的子类可以以不同的方式实现这些抽象方法，从而对剩余的逻辑有不同的实现。这就是模版方法模式的用意。</p><p>例子：存款利息－－货币市场和定期存款</p></blockquote><h3 id=17-观察者模式observer>17. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/16/2502279.html target=_blank rel="noopener noreffer">观察者模式</a></h3><blockquote><p>观察者模式是对象的行为模式，又叫发布－订阅(Publish/Subscribe)模式、模型－视图(Model/View)模式、源－监听器(Source/Listener)模式或从属者(Dependents)模式。</p><p>观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象在状态上发生变化时，会通知所有观察者对象，使它们能够自动更新自己。</p></blockquote><h3 id=18-迭代子模式iterator>18. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/22/2511506.html target=_blank rel="noopener noreffer">迭代子模式</a></h3><blockquote><p>迭代子模式又叫游标(Cursor)模式，是对象的行为模式。迭代子模式可以顺序地访问一个聚集中的元素而不必暴露聚集的内部表象(internal representation)。</p></blockquote><h3 id=19-责任链模式chain-of-responsibility>19. <a href=http://www.cnblogs.com/java-my-life/archive/2012/05/28/2516865.html target=_blank rel="noopener noreffer">责任链模式</a></h3><blockquote><p>责任链模式时一种对象的行为模式。在责任链模式里，很多对象由每一个对象对其下家的引用而连接起来形成一条链。请求在这个链上传递，直到链上的某一个对象决定处理此请求。发出这个请求的客户端并不知道链上的哪一个对象最终处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织和分配责任。</p><p>例子：击鼓传花</p></blockquote><h3 id=20-命令模式command>20. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/01/2526972.html target=_blank rel="noopener noreffer">命令模式</a></h3><blockquote><p>命令模式属于对象的行为模式。命令模式又称为行动(Action)模式或交易(Transaction)模式。</p><p>命令模式把一个请求或者操作封装到一个对象中。命令模式允许系统使用不同的请求把客户端参数化，对请求排队活着记录请求日志，可以提供命令的撤销和恢复功能。</p><p>例子：录音机</p></blockquote><h3 id=21-备忘录模式memento>21. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/06/2534942.html target=_blank rel="noopener noreffer">备忘录模式</a></h3><blockquote><p>备忘录模式又叫做快照模式(Snapshot Pattern)或Token模式，是对象的行为模式。</p><p>备忘录对象是一个用来存储另外一个对象内部状态的快找的对象。备忘录模式的用意是在不破坏封装的条件下，将一个对象的状态捕捉(Capture)住，并外部化，存储起来，从而可以在将来合适的时候把这个对象还原到存储起来的状态。备忘录模式常常与命令模式和迭代子模式一同使用。</p></blockquote><ul><li>白箱</li><li>黑箱</li><li>多重检查点</li><li>自述历史</li></ul><h3 id=22-状态模式state>22. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/08/2538146.html target=_blank rel="noopener noreffer">状态模式</a></h3><blockquote><p>状态模式，又称状态对象模式（Pattern of Objects for States），状态模式时对象的行为模式。</p><p>状态模式允许一个对象在其内部状态改变的时候改变其行为。这个对象看上去就像是改变了它的类一样。</p><p>例子：在线投票系统－－正常投票、重复投票、恶意刷屏、黑名单</p></blockquote><h3 id=23-访问者模式visitor>23. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html target=_blank rel="noopener noreffer">访问者模式</a></h3><blockquote><p>访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这个操作的数据结构则可以保持不变。</p></blockquote><h3 id=24-解释器模式interpreter>24. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/19/2552617.html target=_blank rel="noopener noreffer">解释器模式</a></h3><blockquote><p>解释器是类的行为模式。给定一个语言之后，解释器模式可以定义出其文法的一种表示，并同时提供一个解释器。客户端可以使用这个解释器来解释这个语言中的句子。</p></blockquote><h3 id=25-调停者模式mediator>25. <a href=http://www.cnblogs.com/java-my-life/archive/2012/06/20/2554024.html target=_blank rel="noopener noreffer">调停者模式</a></h3><blockquote><p>调停者模式是对象的行为模式。调停者模式包装了一系列对象相互作用的方式，使得这些对象不必相互明显引用。从而使它们可以较松散地耦合。当这些对象中的某些对象之间的相互作用发生改变时，不会立即影响到其它的一些对象之间的相互作用。从而保证这些相互作用可以彼此独立地变化。</p></blockquote></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2016-09-02</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/>设计模式</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/2016/09/python-commands-records-01/ class=prev rel=prev title=Python使用记录-学习笔记-01><i class="fas fa-angle-left fa-fw"></i>Python使用记录-学习笔记-01</a>
+<a href=/2016/09/sql-categories/ class=next rel=next title=SQL分类－－DQL、DDL、DML、DCL>SQL分类－－DQL、DDL、DML、DCL<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2016 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://brucemaa.cn target=_blank>BruceMaa</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"brucemaa.cn","lightTheme":"github-light","repo":"BruceMaa/blog"}}};</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-82993633-1',{'anonymize_ip':true});</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-82993633-1" async></script></body></html>
