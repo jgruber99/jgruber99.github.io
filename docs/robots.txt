@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://brucemaa.cn/sitemap.xml
+Sitemap: https://jgruber99.github.io/sitemap.xml

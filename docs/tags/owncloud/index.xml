@@ -1,6 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>OwnCloud - 标签 - 司马琦昂的博客</title><link>https://brucemaa.cn/tags/owncloud/</link><description>OwnCloud - 标签 - 司马琦昂的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>bruce.maqiang@gmail.com (BruceMaa)</managingEditor><webMaster>bruce.maqiang@gmail.com (BruceMaa)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 07 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://brucemaa.cn/tags/owncloud/" rel="self" type="application/rss+xml"/><item><title>在CentOS6服务器上安装ownCloud9</title><link>https://brucemaa.cn/2016/11/install-owncloud9-on-centos6/</link><pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate><author>作者</author><guid>https://brucemaa.cn/2016/11/install-owncloud9-on-centos6/</guid><description><![CDATA[<h2 id="介绍">介绍</h2>
-<blockquote>
-<p>ownCloud是一种私人文件系统，在公司内部搭建方便上传、下载以及分享文件。</p>
-<p>产品可以上传需求文件，测试可以上传测试用例。</p>
-<p>参考地址：http://tecadmin.net/install-owncloud-on-centos/</p>
-</blockquote>]]></description></item></channel></rss>
