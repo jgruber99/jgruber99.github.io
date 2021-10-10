@@ -1,7 +1,7 @@
 ---
 title: "About me"
-subtitle: "A longer introduction about myself"
-date: 2021-10-10
+subtitle: "Brief overview of my lifef"
+date: 2021-08-10
 toc:
   enable: false
 code: 
@@ -12,11 +12,9 @@ comment:
   enable: false
 ---
 
-
-
 Hi, my name is Julius and I am a 22-year old Austrian. I grew up in Linz, Austria, where I completed a humanistic high school, [Akademisches Gymnasium Linz](https://akadgymlinz.at) (hence I spent more time learning ancient languages than anyone would consider reasonable -  but at least I had fun.)
 
-Afterwards, I enrolled for a  bachelor Degree in Computational Science and Engineering at [ETH Zurich]( https://ethz.ch/en.html), an interdisciplinary degree that combines (applied) math, computer science and natural science.  
+Afterwards, I enrolled in a bachelor degree program in Computational Science and Engineering at [ETH Zurich]( https://ethz.ch/en.html), an interdisciplinary degree that combines (applied) math, computer science and natural science.  
 
 Currently, I am doing an internship at [GoStudent](https://www.gostudent.org/en), an EduTech startup in Vienna, as a Data Science intern. I am mainly doing work in the fields of Data Science, Data Engineering, Emotion Detection, some DevOps related stuff & a bit of Software Engineering. 
 

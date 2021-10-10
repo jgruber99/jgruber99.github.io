@@ -12,6 +12,8 @@ comment:
   enable: false
 ---
 
+Seems that this file is outdates and not used
+
 
 
 Hi, my name is Julius and I am a 22-year old Austrian. I grew up in Linz, Austria, where I completed a humanistic high school, [Akademisches Gymnasium Linz](https://akadgymlinz.at) (hence I spent more time learning ancient languages than anyone would consider reasonable -  but at least I had fun.)
@@ -22,5 +24,6 @@ Currently, I am doing an internship at [GoStudent](https://www.gostudent.org/en)
 
 I spent my leisure time with friends & family, do some coding related stuff and I even pretend to do sports (Check out my unactive Strave here).
 
+Seems that this file is outdates and not used
 
 
