@@ -1,4 +1,4 @@
-baseURL = "https://juliusgruber.com"
+baseURL = "https://jgruber99.github.io"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
 defaultContentLanguage = "en"
@@ -561,7 +561,7 @@ enableEmoji = true
 [author]
   name = "Julius Gruber"
   email = "gruber.julius@gmx.at"
-  link = "https://juliusgruber.com"
+  link = "https://jgruber99.github.io"
 
 # Sitemap config
 # 网站地图配置
