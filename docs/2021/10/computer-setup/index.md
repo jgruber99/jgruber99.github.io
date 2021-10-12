@@ -24,7 +24,7 @@
     
 
 * Different files
-    + [vimrc](/files/vimrc.txt): My current vimrcm, which is constantly changing. As a package manager I use [vundle](https://github.com/VundleVim/Vundle.vim).
+    + [vimrc](/files/vimrc.txt): My current vimrcm, which is constantly changing. I also found this [vimrc](http://vim.fisadev.com), which is focused on Python. As a package manager I use [vundle](https://github.com/VundleVim/Vundle.vim).
     + [zshrc](/files/zshrc.txt): Current zshrc, which is also changing constantly. 
     
 

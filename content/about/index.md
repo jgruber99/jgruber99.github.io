@@ -1,6 +1,6 @@
 ---
 title: "About me"
-subtitle: "Brief overview of my lifef"
+subtitle: "Brief overview of my life!"
 date: 2021-08-10
 toc:
   enable: false

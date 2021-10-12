@@ -7,11 +7,4 @@ Ich habe für das meist verwendete Lateinbuch in Österreich - [Medias in Res](h
 
 [Alle Lektionen gesammelt](/Karteikarten/Karteikartenlisten.zip)
 
-[Lektionen 1 -10][/Karteikarten/Lektionen_in_10er_Blöcken/Lektionen 1-10.zip]
-
-[Lektionen 11 -20][/Karteikarten/Lektionen_in_10er_Blöcken/Lektionen 11-20.zip]
-
-[Lektionen 21 -30][/Karteikarten/Lektionen_in_10er_Blöcken/Lektionen 21-30.zip]
-
-[Lektionen 31 -40][/Karteikarten/Lektionen_in_10er_Blöcken/Lektionen 31-40.zip]
 
