@@ -18,7 +18,7 @@ Afterwards, I enrolled in a bachelor degree program in Computational Science and
 
 Currently, I am doing an internship at [GoStudent](https://www.gostudent.org/en), an EduTech startup in Vienna, as a Data Science intern. I am mainly doing work in the fields of Data Science, Data Engineering, Emotion Detection, some DevOps related stuff & a bit of Software Engineering. 
 
-I spent my leisure time with friends & family, do some coding related stuff and I even pretend to do sports (check out my unactive Strave here).
+I spent my leisure time with friends & family, do some coding related stuff and I even pretend to do sports (check out my unactive Strava here).
 
 
 
