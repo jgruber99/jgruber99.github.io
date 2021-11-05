@@ -19,6 +19,7 @@ tags: ["Linux", "MacOS"]
     + [PyCharm](https://www.jetbrains.com/pycharm/): Ecspecially useful for coding in Python.
     + [RStudio](https://rstudio.com): The working enviroment for R.
     + [Overleaf](https://www.overleaf.com): Collaborative Latex Editor.
+	+ [conda](https://www.anaconda.com/): my Python virtual enviroment of choice. In the beginning I really hated it, but when I first had my compatibility conflict, I was so glad to find out that venvs exist. I prefer it over the normal python venv as you have more options to set it up.
 * Command Line 
     + [Kitty](https://sw.kovidgoyal.net/kitty/invocation/): My terminal emulator of choice. 
     + [iTerm](https://iterm2.com): Unfortunately, only available on MacOS. Has some really nice plugins.
