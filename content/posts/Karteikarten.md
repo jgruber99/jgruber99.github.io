@@ -1,9 +1,9 @@
 ---
-title: Flashcards for "Medias in Red"
+title: Flashcards for "Medias in Res"
 date: 2021-10-09
 lastmod: 2021-10-10
 draft: false
-summary: Flashcards for "Medias in Red"
+summary: Flashcards for "Medias in Res"
 description: Check this out
 categories: ["Latin"]
 tags: ["Latin", "Education"]
